@@ -13,6 +13,7 @@ Consolidador dos resultados para entrega ao usuário final.
 Cada agente subordinado possui especialização específica, permitindo que as tarefas sejam atribuídas à entidade mais adequada para a execução.
 
 ## 📷 Diagrama de Fluxo
+![Diagrama de Fluxo](images/manager_agent_flow.png)
 
 ## 🔁 Fluxo de Execução
 O processo completo é dividido nas seguintes etapas:
