@@ -40,10 +40,4 @@ Caso necessário, o Manager reativa o Researcher ou o Writer para ajustes adicio
 6. Consolidação da resposta final
 Uma vez que todas as etapas são concluídas, o Manager consolida o conteúdo final e o entrega ao usuário.
 
-## 🚀 Como Executar
-- Clone o repositório.
-- Abra o notebook.
-- Defina uma key para a llm.
-- Execute célula por célula para acompanhar a execução do fluxo entre os agentes.
-
 
