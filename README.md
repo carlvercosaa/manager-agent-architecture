@@ -1,43 +1,68 @@
 ## 🧠 Manager Agent Architecture
-Este repositório contém a implementação de uma arquitetura Manager Agent, responsável por coordenar um sistema multi-agente baseado em especialização, controle centralizado e execução eficiente de tarefas. O fluxo de execução segue uma abordagem estruturada que simula a interação entre agentes como Manager, Researcher e Writer, otimizando o processamento de consultas complexas.
 
-## 📌 Visão Geral
-A arquitetura Manager Agent organiza agentes subordinados em torno de um agente gerente central (Manager), que atua como:
+This repository implements an intelligent, manager-centric agent architecture designed to coordinate specialized agents through a controlled delegation model. The **Manager Agent** acts as the central brain of the system, orchestrating tasks among agents such as the **Researcher** and **Writer**, each with well-defined roles.
+By simulating a human-like delegation workflow, this architecture enables the system to handle complex queries with precision, adaptability, and clarity. The Manager oversees task distribution, supervises agent outputs, and consolidates final answers—ensuring high-quality results through structured, modular collaboration.
 
-Orquestrador das tarefas;
+---
 
-Tomador de decisão sobre qual agente será acionado;
+## 📌 Overview
 
-Consolidador dos resultados para entrega ao usuário final.
+The architecture consists of three main components organized in a centralized, manager-driven flow:
 
-Cada agente subordinado possui especialização específica, permitindo que as tarefas sejam atribuídas à entidade mais adequada para a execução.
+- **🧠 Manager Agent**  
+  Acts as the orchestrator of the system. It receives the user’s input, analyzes the intent, delegates tasks to the appropriate specialized agents, monitors the output, and consolidates the final response.
 
-## 📷 Diagrama de Fluxo
-![Diagrama de Fluxo](images/manager_agent_flow.png)
+- **🔍 Researcher Agent**  
+  A specialized agent responsible for searching, gathering, and verifying information using external tools or APIs. It is triggered when the query requires factual data, research, or information retrieval.
 
-## 🔁 Fluxo de Execução
-O processo completo é dividido nas seguintes etapas:
+- **✍️ Writer Agent**  
+  Focused on rewriting, summarizing, or restructuring the collected content. It improves the clarity, coherence, and final presentation of the response before it is delivered to the user.
 
-1. Recebendo pergunta
-O processo se inicia quando o usuário submete uma consulta.
-O Manager analisa a consulta e define uma estratégia para tratá-la, decidindo se envolverá o Researcher, o Writer ou ambos.
+This architecture enables a modular and controlled multi-agent system, simulating a human-like delegation workflow in which a central manager assigns tasks to subject-matter experts.
 
-2. Acionando o Researcher
-Se a consulta requer pesquisa, coleta de dados ou checagem de fatos, o Manager delega a tarefa ao Researcher.
-O Researcher pode usar Tool-Calling (APIs, mecanismos de busca, ferramentas externas) para coletar os dados necessários.
+---
 
-3. Retornando a resposta do Researcher
-O Researcher envia os dados processados de volta ao Manager, podendo ser uma resposta bruta ou parcial.
+## 📷 Flow Diagram
 
-4. Acionando o Writer
-Com base na análise inicial ou na resposta do Researcher, o Manager pode acionar o Writer.
-O Writer é responsável por refinar, reestruturar ou reescrever o conteúdo, garantindo clareza e coerência.
+![Flow Diagram](images/manager_agent_flow.png)
 
-5. Atualizando e Monitorando
-O Manager supervisiona o conteúdo gerado e assegura que ele esteja alinhado com a solicitação original.
-Caso necessário, o Manager reativa o Researcher ou o Writer para ajustes adicionais.
+---
 
-6. Consolidação da resposta final
-Uma vez que todas as etapas são concluídas, o Manager consolida o conteúdo final e o entrega ao usuário.
+## 🔁 Execution Flow
+
+1. **Receiving the User Question**  
+   The process begins when the user submits a query.  
+   The **Manager** analyzes the query and defines a strategy to handle it, deciding whether to involve the **Researcher**, the **Writer**, or both.
+
+2. **Triggering the Researcher**  
+   If the query requires research, data collection, or fact-checking, the **Manager** delegates the task to the **Researcher**.  
+   The **Researcher** may use tool-calling capabilities (APIs, search engines, external tools) to gather the necessary data.
+
+3. **Returning the Researcher's Output**  
+   The **Researcher** sends the processed data back to the **Manager**, which could be raw information or partial content.
+
+4. **Triggering the Writer**  
+   Based on the initial analysis or the Researcher’s output, the **Manager** may trigger the **Writer**.  
+   The **Writer** is responsible for refining, restructuring, or rewriting the content, ensuring clarity and coherence.
+
+5. **Monitoring and Updating**  
+   The **Manager** supervises the generated content and ensures it aligns with the original user intent.  
+   If necessary, the **Manager** may re-engage the **Researcher** or **Writer** for additional adjustments.
+
+6. **Final Response Consolidation**  
+   Once all steps are complete, the **Manager** consolidates the final output and delivers it to the user.
+
+   ## 💬 Example Interaction
+
+**User Input:**  
+*"Who is the CEO of OpenAI and where was he born?"*
+
+**Execution Breakdown:**  
+- The **Manager** receives the query and identifies that it requires factual information and natural language formatting.
+- The **Researcher** is triggered and returns:  
+*"The CEO of OpenAI is Sam Altman. He was born in Chicago, Illinois, USA."*
+- The **Writer** is then triggered to refine the response:  
+*"Sam Altman, the CEO of OpenAI, was born in Chicago, Illinois."*
+- The **Manager** validates the response, confirms alignment with the user’s question, and delivers it.
 
 
